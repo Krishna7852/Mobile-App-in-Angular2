@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <h2>sign-up page</h2>
+  <form novalidate [formGroup]="myForm" (ngSubmit)="onSignup()">
+    <div class="form-group">
+      <label for="email">E-Mail</label>
+      <input formControlName="email" type="email" id="email" #email class="form-control" placeholder="Enter Email Address">
+      <span class="text-danger" *ngIf="myForm.get('email').hasError('noEmail') "> Email is required and format should be <i>admin@mail.com</i></span>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input formControlName="password" type="password" id="password" class="form-control" placeholder="Enter password">
+      <span class="text-danger" *ngIf="myForm.get('password').hasError('required')">Enter password</span>
+
+    </div>
+    <div class="form-group">
+      <label for="confirm-password">Confirm Password</label>
+      <input formControlName="confirmPassword" type="password" id="confirm-password" #confirmPassword class="form-control" placeholder="Enter Same Password">
+      <span class="text-danger" *ngIf="myForm.get('confirmPassword').hasError('passwordsNotMatch')">Passwords do not match</span>
+    </div>
+    <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Sign Up</button>
+
+  </form>
+</div>

@@ -1,0 +1,26 @@
+img{
+  height: 200px;
+  width: 150px;
+}
+.panel-body:hover{
+  background-color:	#ee0000;
+  border-radius: 6px;
+  color: white;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+.tableContain{
+  margin-left: 20px;
+}
+/*.container{
+  margin-right: 150%;
+}*/
+.thumbnail {
+  border-radius: 2%;
+  width: 80%;
+  box-shadow: 0 0 30px black;
+}
