@@ -3,7 +3,7 @@ img{
   width: 150px;
 }
 .panel-body:hover{
-  background-color:	#ee0000;
+  background-color:green;
   border-radius: 6px;
   color: white;
 }
@@ -16,11 +16,11 @@ table, th, td {
 .tableContain{
   margin-left: 20px;
 }
-/*.container{
-  margin-right: 150%;
-}*/
-.thumbnail {
+.thumbnail:hover {
   border-radius: 2%;
-  width: 80%;
+  /*width: 80%;*/
   box-shadow: 0 0 30px black;
+}
+.seconPart {
+  margin-top: -40px;
 }

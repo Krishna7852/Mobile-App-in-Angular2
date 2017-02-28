@@ -1,75 +1,88 @@
 
-<div class="container">
-  <div class="row">
-    <div *ngFor="let item of data" class="col-md-4">
-      <div class="thumbnail">
-        <img src="{{item.image.small}}" />
-        <div class="caption">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <h4 style="text-align:center" data-toggle="modal" data-target="#myModal" (click)='btnShowData(item.id)'>{{item.specs.manufacturer}}</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">{{specs.manufacturer}}</h4>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-sm-6">
-                <img src="{{largeImage}}" class="thumbnail" style="height:400px; width:300px" />
-              </div>
-              <div class="col-sm-6">
-                <div class="well">
-                  <h4>Name:-{{mobileLarge.name}}</h4></div>
-                <div class="tableContain">
-                  <table>
-                    <tr>
-                      <th>Feactures</th>
-                      <th>Description</th>
-                    </tr>
-                    <tr>
-                      <td>Manufacturer</td>
-                      <td>{{specs.manufacturer}}</td>
-                    </tr>
-                    <tr>
-                      <td>Camera</td>
-                      <td>{{specs.camera}} MB</td>
-                    </tr>
-                    <tr>
-                      <td>Rating</td>
-                      <td>{{mobileLarge.rating}}</td>
-                    </tr>
-                    <tr>
-                      <td>OS</td>
-                      <td>{{specs.os}}</td>
-                    </tr>
-                    <tr>
-                      <td>Storage</td>
-                      <td>{{specs.storage}} GB</td>
-                    </tr>
-                    <tr>
-                      <td>Price</td>
-                      <td>$ {{mobileLarge.price}} </td>
-                    </tr>
-                  </table>
+<div class="row">
+  <div class="col-md-1">
+<app-sidebar></app-sidebar>
+  </div>
+  <div class="seconPart col-md-9">
+    <div class="container">
+      <!-- <div *ngFor="let product of data1 | categoryFilter : filterBy()" [prod]="product"></div> -->
+
+      <div class="row">
+        <div *ngFor="let item of data | categoryFilter : filterBy()"  class="col-md-4">
+          <!-- <h4>{{item.name}}</h4> -->
+          <div class="thumbnail">
+            <img src="{{item.image.small}}" />
+            <div class="caption">
+              <div class="panel panel-default">
+                <div class="panel-body" >
+                  <h4 style="text-align:center; cursor:pointer" data-toggle="modal" data-target="#myModal" (click)='btnShowData(item.id)'>{{item.name}}</h4>
                 </div>
               </div>
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{specs.manufacturer}}</h4>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <img src="{{largeImage}}" class="thumbnail" style="height:400px; width:300px" />
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <h4>Name:-{{mobileLarge.name}}</h4></div>
+                    <div class="tableContain">
+                      <table>
+                        <tr>
+                          <th>Feactures</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>Manufacturer</td>
+                          <td>{{specs.manufacturer}}</td>
+                        </tr>
+                        <tr>
+                          <td>Camera</td>
+                          <td>{{specs.camera}} MB</td>
+                        </tr>
+                        <tr>
+                          <td>Rating</td>
+                          <td>{{mobileLarge.rating}}</td>
+                        </tr>
+                        <tr>
+                          <td>OS</td>
+                          <td>{{specs.os}}</td>
+                        </tr>
+                        <tr>
+                          <td>Storage</td>
+                          <td>{{specs.storage}} GB</td>
+                        </tr>
+                        <tr>
+                          <td>Price</td>
+                          <td>$ {{mobileLarge.price}} </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+
+    </div>
+
+    </div>

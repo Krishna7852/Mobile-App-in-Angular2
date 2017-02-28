@@ -5,15 +5,16 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-import { ShowdataComponent } from "./showdata/showdata.component";
 import { AuthGuard } from "./auth.guard";
-
+import { PassDataService } from './pass-data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from "./auth.service";
 import {FirebaseService} from './firebase.service';
-// import {DataTableModule} from "angular2-datatable";
 import { ReactiveFormsModule} from '@angular/forms';
+import {SidebarComponent } from './sidebar/sidebar.component';
 import { DisplayComponent } from './display/display.component';
+import { CategoryFilterPipe } from './category-filter.pipe';
+import { OnlyKeysPipe } from './only-keys.pipe';
     const config = {
       apiKey: "AIzaSyDDWHZp8iUqLiuhXWkQEhByBhsDna942qA",
       authDomain: "mobile-app-angular2.firebaseapp.com",
@@ -28,8 +29,11 @@ import { DisplayComponent } from './display/display.component';
     AppComponent,
     SigninComponent,
     SignupComponent,
-    ShowdataComponent,
-    DisplayComponent
+    DisplayComponent,
+    SidebarComponent,
+    CategoryFilterPipe,
+    OnlyKeysPipe
+
 
   ],
   imports: [
@@ -37,11 +41,10 @@ import { DisplayComponent } from './display/display.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-	// DataTableModule,
 ReactiveFormsModule
   ],
 
-  providers: [ AuthService,FirebaseService,AuthGuard],
+  providers: [ AuthService,FirebaseService,PassDataService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
